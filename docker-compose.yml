@@ -1,0 +1,13 @@
+es:
+    image: elasticsearch:2
+    volumes:
+        - ./data/esdata:/usr/share/elasticsearch/data
+    command: elasticsearch -Des.cluster.name="crawler_es" -Des.discovery.zen.ping.multicast.enabled="false" -Des.network.bind_host="_non_loopback_"
+kibana:
+    image: kibana:4
+    ports:
+    - 5601:5601
+    links:
+    - es:elasticsearch
+
+#docker inspect --format '{{ .NetworkSettings.IPAddress }}' personalgithistory_kibana_1

@@ -1,3 +1,7 @@
+# custom for this project
+cache-dirs
+data
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
